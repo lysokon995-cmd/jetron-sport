@@ -1,0 +1,10 @@
+/* The preview keeps the original theme layout and interactive controllers. */
+.jetron-demo .banner__bg img,.jetron-demo .discounts__bg img,.jetron-demo .steps__img img { filter:none; }
+.jetron-demo .wpcf7-response-output { color:#252824;border:1px solid #687487;border-radius:8px;padding:12px;margin:16px 0 0;background:#fff; }
+.jetron-demo .wpcf7-response-output a { color:#622573;text-decoration:underline; }
+.jetron-demo .slick-arrow { cursor:pointer; }
+.jetron-demo .slick-arrow svg { display:block; }
+@layer palette-review {
+ body.jetron-demo #jtn-scroll-top:hover,body.jetron-demo #jtn-scroll-top:focus-visible {background:#252824!important;color:#fff!important;border-color:#252824!important;}
+ @media(prefers-reduced-motion:reduce){body.jetron-demo *,body.jetron-demo *::before,body.jetron-demo *::after{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important;animation-iteration-count:1!important;}}
+}

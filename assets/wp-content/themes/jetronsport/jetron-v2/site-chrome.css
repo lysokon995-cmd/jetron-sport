@@ -1,0 +1,1223 @@
+/* Site-wide jetron-v2 chrome (inner pages only — class jtn2-chrome) */
+.jtn2-chrome {
+  background: #eee !important;
+  --bg: #eee;
+  position: relative;
+  z-index: 10050;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Inner pages: same gray page chrome as homepage */
+body.jetron-jtn2-chrome:not(.jetron-home-design) {
+  background: #eee !important;
+}
+body.jetron-jtn2-chrome:not(.jetron-home-design) .jtn2-chrome,
+body.jetron-jtn2-chrome:not(.jetron-home-design) .jtn2-chrome .jtn2-header,
+body.jetron-jtn2-chrome:not(.jetron-home-design) .jtn2-chrome .jtn2-wrap:not(.jtn2-top-inner) {
+  background: #eee !important;
+  background-color: #eee !important;
+}
+
+/* Desktop: light header identical to homepage on all pages */
+@media (min-width: 1025px) {
+  .jtn2-chrome .jtn2-header {
+    min-height: clamp(80px, 7vw, 120px) !important;
+    height: auto !important;
+    padding-block: 0 !important;
+    align-items: center !important;
+  }
+  .jtn2-chrome .jtn2-wrap:not(.jtn2-top-inner) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+/* Controls strip is homepage-only; never in chrome */
+.jtn2-chrome .jtn2-controls {
+  display: none !important;
+}
+
+/* City name: kill old theme dashed red underline under Москва */
+.jtn2-city .r1ship-customer-city-name,
+.jtn2 .r1ship-customer-city-name {
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+/* Cart modal: clicks on SVG <use> must hit the button; above chrome */
+#js-modal-cart {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  z-index: 2147483400 !important;
+  overflow: auto !important;
+}
+
+/* Desktop cart must be centered in the viewport and completely above site chrome. */
+/* When cart is open, site chrome must not establish a competing top layer.
+ * The overlay remains visible behind the modal, but every header child is below it. */
+body:has(#js-modal-cart[style*="display: block"]) .jtn2-header,
+body:has(#js-modal-cart.active) .jtn2-header,
+body:has(#js-modal-cart.is-open) .jtn2-header,
+body:has(#js-modal-cart.show) .jtn2-header,
+body:has(#js-modal-cart:not([style*="display: none"]):not([hidden])) .jtn2-header {
+  z-index: 1 !important;
+  isolation: auto !important;
+}
+
+#js-modal-cart .modal-basket__close,
+#js-modal-cart .modal-basket__clear {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+#js-modal-cart .modal-basket__close svg,
+#js-modal-cart .modal-basket__clear svg,
+#js-modal-cart .modal-basket__close use,
+#js-modal-cart .modal-basket__clear use {
+  pointer-events: none !important;
+}
+
+/* Mobile menu isolation (do not affect cart modal) */
+body.jetron-jtn2-chrome > .jmx-menu {
+  z-index: 2147483000 !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu .jtn2-search,
+body.jetron-jtn2-chrome > .jmx-menu .jtn2-social {
+  display: flex !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu .jtn2-search input[type="search"] {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  font: inherit !important;
+  color: inherit !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu button {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  font: inherit !important;
+  color: inherit !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu .jmx-close {
+  display: grid !important;
+  place-items: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  color: #252825 !important;
+  font: 30px/1 Arial, sans-serif !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu .jtn2-mnav-acc-btn {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 2px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #dedede !important;
+  background: transparent !important;
+  font: 400 17px/1.35 Arial, sans-serif !important;
+  color: #252825 !important;
+  text-align: left !important;
+}
+body.jetron-jtn2-chrome > .jmx-menu .jtn2-mnav-call {
+  display: flex !important;
+  width: 100% !important;
+  padding: 14px 2px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #dedede !important;
+  background: transparent !important;
+  font: 400 17px/1.35 Arial, sans-serif !important;
+  color: #252825 !important;
+  text-align: left !important;
+}
+
+/* Desktop inner pages: same header horizontal as homepage (88% / 1728) */
+@media (min-width: 1025px) {
+  .jtn2-chrome .jtn2-wrap {
+    width: 88% !important;
+    max-width: 1728px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Stronger kill for old dashed red city underline on all pages */
+.jtn2-city .r1ship-customer-city-name,
+.jtn2 .r1ship-customer-city-name,
+.jtn2-chrome .r1ship-customer-city-name {
+  border: 0 !important;
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Top bar typography: identical on homepage and inner pages */
+.jtn2-top,
+.jtn2-top .jtn2-top-inner,
+.jtn2-top .jtn2-city,
+.jtn2-top .r1ship-customer-city-name,
+.jtn2-top .jtn2-top-contacts,
+.jtn2-top .jtn2-top-contacts a,
+.jtn2-top .jtn2-top-contacts a b {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  font-variant-numeric: normal !important;
+  text-transform: none !important;
+}
+.jtn2-top .jtn2-top-inner {
+  font-size: clamp(10px, 0.85vw, 15px) !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+}
+.jtn2-top .jtn2-top-contacts a b {
+  font-weight: 700 !important;
+}
+
+/* Mobile inner pages: same logo breathing room as homepage (~14px pad, 70px bar) */
+@media (max-width: 1024px) {
+  .jtn2-chrome .jtn2-wrap:not(.jtn2-top-inner) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .jtn2-chrome .jtn2-header {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding: 14px 0 !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  .jtn2-chrome .jtn2-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .jtn2-chrome .jtn2-cart,
+  .jtn2-chrome .jtn2-menu-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .jtn2-chrome .jtn2-cart svg,
+  .jtn2-chrome .jtn2-menu-btn svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+
+/* Desktop Catalog dropdown: same visual language as the Football-form dropdown. */
+@media (min-width: 1025px) {
+  .jtn2-nav .jtn2-catalog-dd {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 80;
+  }
+  .jtn2-nav .jtn2-catalog-dd-menu {
+    position: absolute;
+    top: calc(100% + 10px) !important;
+    left: -18px !important;
+    min-width: 230px !important;
+    padding: 8px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: rgba(255,255,255,.98) !important;
+    box-shadow: 0 12px 30px rgba(17,17,17,.11), 0 1px 0 rgba(255,255,255,.9) inset !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px) !important;
+    transition: opacity .34s cubic-bezier(.2,.7,.2,1), transform .34s cubic-bezier(.2,.7,.2,1), visibility .34s linear !important;
+    z-index: 2147482000 !important;
+    isolation: isolate !important;
+  }
+  .jtn2-nav .jtn2-catalog-dd-menu::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: -14px; height: 14px;
+  }
+  .jtn2-nav .jtn2-catalog-dd.is-open .jtn2-catalog-dd-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Keep Catalog itself in the same hover state while its dropdown is open. */
+  .jtn2-nav .jtn2-catalog-dd.is-open > .jtn2-catalog-dd-btn {
+    color: var(--hover, #8c3b91) !important;
+  }
+  .jtn2-nav .jtn2-catalog-dd.is-open > .jtn2-catalog-dd-btn::after {
+    transform: scaleX(1) !important;
+  }
+  .jtn2-nav .jtn2-catalog-dd-menu a {
+    display: block;
+    padding: 11px 16px !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 14px !important;
+    white-space: nowrap;
+    background: transparent !important;
+    color: #252825 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    font: 400 clamp(13px,1.05vw,17px)/1.25 Arial,Helvetica,sans-serif;
+    transition: background .25s ease, color .25s ease !important;
+  }
+  /* Match the actual Football-form dropdown: plain rows, no selected tile/underline. */
+  .jtn2-nav .jtn2-catalog-dd-menu a,
+  .jtn2-nav .jtn2-catalog-dd-menu a:link,
+  .jtn2-nav .jtn2-catalog-dd-menu a:visited,
+  .jtn2-nav .jtn2-catalog-dd-menu a:hover,
+  .jtn2-nav .jtn2-catalog-dd-menu a:focus,
+  .jtn2-nav .jtn2-catalog-dd-menu a:focus-visible,
+  .jtn2-nav .jtn2-catalog-dd-menu a:active {
+    background: transparent !important;
+    background-image: none !important;
+    color: #252825 !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Override the generic .jtn2-nav a:hover / a::after rules from hero.css. */
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a {
+    color: #252825 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Exactly like Football-form dropdown: hover changes TEXT COLOR ONLY. */
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:hover,
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:focus,
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:focus-visible {
+    color: #632b79 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:active {
+    background: transparent !important;
+    background-image: none !important;
+    text-decoration: none !important;
+  }
+
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a::before,
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a::after,
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:hover::before,
+  .jtn2 .jtn2-nav .jtn2-catalog-dd .jtn2-catalog-dd-menu > a:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    transform: none !important;
+  }
+}
+
+/* Definitive global header layer + portal rules pass29. Loaded after mobile-fix-v2.css. */
+.jtn2-chrome {
+  isolation: auto !important;
+  z-index: auto !important;
+}
+
+.jtn2-sticky-portal {
+  position: static !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  isolation: auto !important;
+  z-index: auto !important;
+}
+
+.jtn2-sticky-portal[hidden] {
+  display: none !important;
+}
+
+.jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: var(--jtn-sticky-left, 0px) !important;
+  width: var(--jtn-sticky-width, auto) !important;
+  height: var(--jtn-sticky-height, auto) !important;
+  min-height: var(--jtn-sticky-height, auto) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  z-index: 2147482000 !important;
+  isolation: isolate !important;
+}
+
+/* Content < header < menu < popup. */
+body > .jmx-menu,
+.jtn2 .jtn2-mnav,
+.jm-overlay {
+  z-index: 2147483000 !important;
+}
+
+body > .modal,
+body .modal.js-modal,
+#js-modal-callback,
+#js-modal-cart,
+#js-modal-size,
+#js-modal-gaiter,
+.modal-size,
+.modal-basket,
+.modal-success,
+.team-order,
+.delivery,
+.fancybox__container,
+.mfp-wrap,
+.mfp-bg,
+.pswp,
+.ui-dialog,
+.ui-widget-overlay {
+  z-index: 2147483400 !important;
+}
+
+@media (max-width: 1024px) {
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+    max-width: calc(100vw - 30px) !important;
+  }
+}
+
+/* Compact sticky state: keep the same content, remove the oversized vertical bar. */
+.jtn2-header,
+.jtn2-header::before {
+  transition: min-height .28s ease, height .28s ease, padding .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease !important;
+}
+
+.jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1025px) {
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+    min-height: 0 !important;
+    padding-block: 5px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  /* Mobile menu is a direct continuation of the header: no seam, no top shadow. */
+  body > .jmx-menu .jmx-panel {
+    border-top: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Homepage uses the same white surface for both header and opened menu. */
+  body.jetron-design-preview > .jmx-menu,
+  body.jetron-design-preview > .jmx-menu .jmx-panel,
+  body.jetron-design-preview > .jmx-menu .jmx-scroll {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Inner pages keep the existing neutral gray surface. */
+  body:not(.jetron-design-preview) > .jmx-menu,
+  body:not(.jetron-design-preview) > .jmx-menu .jmx-panel,
+  body:not(.jetron-design-preview) > .jmx-menu .jmx-scroll {
+    background: #eeeeee !important;
+    background-color: #eeeeee !important;
+  }
+}
+
+/* Sticky header keeps the exact horizontal content alignment of the source container. */
+.jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+  padding-left: var(--jtn-sticky-pad-left, 0px) !important;
+  padding-right: var(--jtn-sticky-pad-right, 0px) !important;
+}
+
+.jtn2-sticky-portal .jtn2-header.is-jtn2-sticky .jtn2-logo,
+.jtn2-sticky-portal .jtn2-header.is-jtn2-sticky .jtn2-logo img {
+  transform: none !important;
+  translate: none !important;
+}
+
+/* Header logo now uses a tightly-cropped vector SVG. No raster crop or negative
+ * margin is needed; keep the vector at its native aspect ratio for crisp edges. */
+.jtn2 .jtn2-logo {
+  display: block !important;
+  overflow: visible !important;
+  line-height: 0 !important;
+  align-self: center !important;
+}
+
+.jtn2 .jtn2-logo img,
+.jtn2-sticky-portal .jtn2-logo img {
+  display: block !important;
+  height: auto !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  margin-bottom: 0 !important;
+  transform: none !important;
+  translate: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  image-rendering: auto !important;
+  backface-visibility: visible !important;
+}
+
+@media (max-width: 1024px) {
+  /* Match the actual 132px mobile artwork width instead of placing a 132px image
+   * inside the old 112px flex box. This avoids overflow/resampling artifacts. */
+  .jtn2 .jtn2-logo,
+  .jtn2-sticky-portal .jtn2-logo {
+    flex: 0 0 132px !important;
+    flex-basis: 132px !important;
+    width: 132px !important;
+    max-width: 132px !important;
+  }
+
+  .jtn2 .jtn2-logo img,
+  .jtn2-sticky-portal .jtn2-logo img {
+    width: 132px !important;
+    max-width: 132px !important;
+  }
+}
+
+/* Catalog filters: above product cards/dropdowns, but still below sticky site chrome. */
+.filter,
+.catalog .filter,
+.catalog__filter .filter,
+body.tax-product_cat .filter,
+body.post-type-archive-product .filter {
+  position: relative !important;
+  z-index: 5000 !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+.filter .filter__wrap {
+  position: relative !important;
+  z-index: 5001 !important;
+  overflow: visible !important;
+}
+.filter .filter-select { position: relative !important; z-index: 5002 !important; }
+.filter .filter-select.open,
+.filter .filter-select:has(.filter-select__header.open) { z-index: 5010 !important; }
+.filter .filter-select__dropdown {
+  z-index: 5011 !important;
+  overflow: visible !important;
+}
+
+/* The portal itself must own the high stacking level. A child z-index cannot escape
+ * a parent stacking context that is behind the catalog filter. */
+body > .jtn2-sticky-portal {
+  position: relative !important;
+  z-index: 2147482000 !important;
+  isolation: isolate !important;
+}
+body > .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+  z-index: 1 !important;
+}
+
+/* Stable legacy catalog layout.
+ * The old theme uses fixed container widths (982/750/540px). During delayed CSS
+ * delivery this can temporarily select a width larger than the real viewport and
+ * shift the entire product grid. Make catalog geometry intrinsically responsive. */
+body.post-type-archive-product .container,
+body.tax-product_cat .container,
+body[class*="term-"] .catalog .container,
+body[class*="woocommerce"] .catalog .container {
+  width: min(100% - 30px, 1320px) !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+.catalog__grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  box-sizing: border-box !important;
+}
+.catalog__grid > *,
+.catalog__grid .card,
+.card__img,
+.card__desc {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.card__img img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1359px) {
+  .catalog__grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 991px) {
+  body.post-type-archive-product .container,
+  body.tax-product_cat .container,
+  body[class*="term-"] .catalog .container,
+  body[class*="woocommerce"] .catalog .container {
+    width: calc(100% - 24px) !important;
+  }
+  .catalog__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
+}
+@media (max-width: 575px) {
+  body.post-type-archive-product .container,
+  body.tax-product_cat .container,
+  body[class*="term-"] .catalog .container,
+  body[class*="woocommerce"] .catalog .container {
+    width: calc(100% - 16px) !important;
+  }
+  /* Keep the original compact mobile catalogue: two cards per row. */
+  .catalog__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+  .catalog__grid .card { width: 100% !important; min-width: 0 !important; }
+}
+
+/* Side-card responsive copy and desktop description typography. */
+.jtn2-side-title-mobile,
+.jtn2-side-desc-mobile { display: none; }
+.jtn2-side-title-desktop,
+.jtn2-side-desc-desktop { display: inline; }
+@media (min-width: 1025px) {
+  /* Match the small descriptions used by the two central product cards
+   * ("Номер на шортах...", "Детская и взрослая / Сетка на спине"). */
+  body.jetron-design-preview .jtn2 .jtn2-side-card p,
+  body.jetron-design-preview .jtn2 .jtn2-side-card .jtn2-side-desc-desktop {
+    font-family: inherit !important;
+    font-size: var(--pair-description, clamp(10px, .83vw, 13px)) !important;
+    line-height: 1.35 !important;
+    font-weight: 400 !important;
+    letter-spacing: normal !important;
+  }
+}
+
+/* Mobile side cards (Cotton T-shirts / Metal posters): use the same compact arrow
+ * scale as the surname/number application card and reserve less title space. */
+@media (max-width: 1024px) {
+  .jtn2-side-title-desktop,
+  .jtn2-side-desc-desktop { display: none !important; }
+  .jtn2-side-title-mobile,
+  .jtn2-side-desc-mobile { display: inline !important; }
+
+  #jtn-scene .jtn2-side-card > div,
+  body.jetron-design-preview .jtn2-side-card > div {
+    padding-right: 2px !important;
+    padding-bottom: 42px !important;
+  }
+  #jtn-scene .jtn2-side-card .jtn2-arrow,
+  body.jetron-design-preview .jtn2-side-card .jtn2-arrow {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    top: auto !important;
+    bottom: 8px !important;
+    right: 0 !important;
+    border-radius: 9px !important;
+  }
+  #jtn-scene .jtn2-side-card .jtn2-arrow svg,
+  body.jetron-design-preview .jtn2-side-card .jtn2-arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  #jtn-scene .jtn2-side-card h3,
+  body.jetron-design-preview .jtn2-side-card h3 {
+    font-size: 16px !important;
+    line-height: 1.12 !important;
+    white-space: nowrap !important;
+    letter-spacing: -.025em !important;
+  }
+  #jtn-scene .jtn2-side-card p,
+  body.jetron-design-preview .jtn2-side-card p {
+    white-space: normal !important;
+    font-family: var(--mobile-pair-font, Arial, Helvetica, sans-serif) !important;
+    font-size: var(--mobile-pair-desc-size, clamp(12px, 3.4vw, 14px)) !important;
+    font-weight: var(--mobile-pair-desc-weight, 400) !important;
+    line-height: var(--mobile-pair-desc-line-height, 1.4) !important;
+    letter-spacing: normal !important;
+  }
+  #jtn-scene .jtn2-side-card > div,
+  body.jetron-design-preview .jtn2-side-card > div {
+    min-height: 90px !important;
+    padding-top: 11px !important;
+    padding-bottom: 12px !important;
+  }
+  #jtn-scene .jtn2-side-card p,
+  body.jetron-design-preview .jtn2-side-card p {
+    margin-top: 10px !important;
+  }
+  #jtn-scene .jtn2-side-card .jtn2-arrow,
+  body.jetron-design-preview .jtn2-side-card .jtn2-arrow {
+    bottom: auto !important;
+    top: 8px !important;
+  }
+
+  /* Touch/focus must not enlarge side-card arrows. */
+  #jtn-scene .jtn2-side-card .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:hover .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus-visible .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus-within .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:active .jtn2-arrow,
+  body.jetron-design-preview .jtn2-side-card .jtn2-arrow,
+  body.jetron-design-preview .jtn2-side-card:focus-within .jtn2-arrow,
+  body.jetron-design-preview .jtn2-side-card:active .jtn2-arrow {
+    transform: none !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+  #jtn-scene .jtn2-side-card .jtn2-arrow svg,
+  #jtn-scene .jtn2-side-card:hover .jtn2-arrow svg,
+  #jtn-scene .jtn2-side-card:focus-within .jtn2-arrow svg,
+  #jtn-scene .jtn2-side-card:active .jtn2-arrow svg,
+  body.jetron-design-preview .jtn2-side-card .jtn2-arrow svg,
+  body.jetron-design-preview .jtn2-side-card:focus-within .jtn2-arrow svg,
+  body.jetron-design-preview .jtn2-side-card:active .jtn2-arrow svg {
+    transform: none !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+
+  /* Same arrow scale for the surname/number application card. */
+  #jtn-scene .jtn2-print.jtp-static a.jpm__arrow.mobile-card-arrow,
+  body.jetron-design-preview .jtn2-print.jtp-static a.jpm__arrow.mobile-card-arrow {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    padding: 0 !important;
+    border-radius: 9px !important;
+    box-sizing: border-box !important;
+  }
+  #jtn-scene .jtn2-print.jtp-static a.jpm__arrow.mobile-card-arrow svg,
+  body.jetron-design-preview .jtn2-print.jtp-static a.jpm__arrow.mobile-card-arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Homepage mobile hero fallback: the first carousel is server-rendered and must be
+ * visible immediately, even before/without deferred JS from the optimization layer. */
+@media (max-width: 1024px) {
+  body.jetron-design-preview .j77-carousel,
+  body.jetron-design-preview .j77-track,
+  body.jetron-design-preview .j77-slide,
+  body.jetron-design-preview .jtn2-products,
+  body.jetron-design-preview .jtn2-player {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  body.jetron-design-preview .j77-carousel {
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+  /* Do NOT replace the mobile carousel track with display:block. Its runtime
+   * positions slides with translateX against a flex track; changing the track to
+   * block made the initialized carousel translate to an empty coordinate, leaving
+   * only pagination visible. */
+  body.jetron-design-preview .j77-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+  body.jetron-design-preview .j77-slide.j77-active,
+  body.jetron-design-preview .j77-track > .jtn2-player:first-child {
+    display: grid !important;
+  }
+}
+
+/* Mobile viewport guard: the document itself must never acquire horizontal scroll. */
+@media (max-width: 1024px) {
+  /* Menu top follows the actual current header height (normal or compact sticky). */
+  body > .jmx-menu {
+    top: var(--jmx-menu-top, 69px) !important;
+  }
+
+  /* Pre-render the drawer so first open has no layout/paint flash. */
+  body > .jmx-menu.jmx-ready[hidden] {
+    display: block !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  body > .jmx-menu.jmx-ready.is-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Final mobile-menu paint contract. The legacy mobile-fix stylesheet contains
+   * several generations of drawer animation (opacity .64 / translateY / delayed
+   * visibility). Override all of them here so opening the sticky menu is atomic. */
+  body > .jmx-menu.jmx-ready {
+    background: #eee !important;
+    background-color: #eee !important;
+    transition: none !important;
+  }
+  body.jetron-design-preview > .jmx-menu.jmx-ready {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+  body > .jmx-menu.jmx-ready .jmx-panel,
+  body > .jmx-menu.jmx-ready .jmx-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    transition: none !important;
+    background: #eee !important;
+    background-color: #eee !important;
+  }
+  body.jetron-design-preview > .jmx-menu.jmx-ready .jmx-panel,
+  body.jetron-design-preview > .jmx-menu.jmx-ready .jmx-scroll {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+  body > .jmx-menu.jmx-ready .jmx-backdrop {
+    transition: none !important;
+  }
+
+  /* Programmatic focus on the phone must never draw a browser-default rectangle. */
+  body > .jmx-menu .jmx-phone,
+  body > .jmx-menu .jmx-phone:focus,
+  body > .jmx-menu .jmx-phone:focus-visible,
+  body > .jmx-menu .jmx-phone:active {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Drawer and sticky header share one surface from the very first painted frame. */
+  body.jmx-menu-open > .jmx-menu {
+    margin-top: 0 !important;
+    border-top: 0 !important;
+    transform: none !important;
+  }
+  body.jmx-menu-open > .jmx-menu .jmx-panel {
+    transform: none !important;
+    transition: opacity .16s ease !important;
+  }
+
+  /* While the drawer is open, header + drawer are one continuous surface. */
+  .jtn2-header.jmx-header-menu-open,
+  .jtn2-header.jmx-header-menu-open::before {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* No hard separator when compact sticky state begins. Use a very soft fade only. */
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+    border-bottom-color: transparent !important;
+    box-shadow: 0 5px 14px rgba(31,39,51,.035) !important;
+  }
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky::before {
+    border-bottom: 0 !important;
+  }
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky.jmx-header-menu-open,
+  .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky.jmx-header-menu-open::before {
+    box-shadow: none !important;
+  }
+
+  body.jmx-menu-open > .jmx-menu,
+  body.jmx-menu-open > .jmx-menu .jmx-panel,
+  body.jmx-menu-open > .jmx-menu .jmx-scroll {
+    border-top: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Homepage stays white; every inner page keeps the same gray as its header. */
+  body.jetron-design-preview.jmx-menu-open > .jmx-menu,
+  body.jetron-design-preview.jmx-menu-open > .jmx-menu .jmx-panel,
+  body.jetron-design-preview.jmx-menu-open > .jmx-menu .jmx-scroll {
+    background: #fff !important;
+  }
+  body:not(.jetron-design-preview).jmx-menu-open > .jmx-menu,
+  body:not(.jetron-design-preview).jmx-menu-open > .jmx-menu .jmx-panel,
+  body:not(.jetron-design-preview).jmx-menu-open > .jmx-menu .jmx-scroll {
+    background: #eee !important;
+  }
+
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  body > main,
+  body > .wrapper,
+  .jtn2,
+  .jtn2-chrome {
+    max-width: 100vw !important;
+    overflow-x: clip !important;
+  }
+
+  img,
+  svg,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  /* Keep the homepage category ticker visually full-bleed. The document itself is
+   * clipped on X above, so the ticker may run to/through the viewport edges without
+   * creating a horizontal page scroll. */
+  .jtn2 .jtn2-cat-tabs.jmx-categories {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-cat-tabs.jmx-categories .jmx-category-track {
+    overflow: visible !important;
+  }
+}
+
+/* Reserve the final footer before JS: 26px gap + 28px controls + 38px to ticker. */
+@media (max-width:1024px) {
+  body.jetron-design-preview #jtn-scene .j77-carousel {
+    margin-bottom: 0 !important;
+    padding-bottom: 92px !important;
+  }
+  body.jetron-design-preview #jtn-scene .j77-carousel + .jtn2-cat-tabs {
+    margin-top: 0 !important;
+  }
+  body.jetron-design-preview #jtn-scene .j77-nav {
+    position: absolute !important;
+    inset: auto 0 38px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  body.jetron-design-preview #jtn-scene .j77-track > .j77-slide {
+    translate: none !important;
+  }
+}
+
+
+
+/* Mobile catalog filter geometry repair — 2026-09-18 */
+@media (max-width: 767px) {
+  .filter { position: relative !important; width: 100% !important; overflow: visible !important; }
+  .filter .filter__wrap {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 12px 12px !important;
+    background: #d8e0f5 !important;
+    border-radius: 0 0 8px 8px !important;
+    overflow: hidden !important;
+    z-index: 5001 !important;
+  }
+  .filter .filter__selects { width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+  .filter .filter-select { width: 100% !important; min-width: 0 !important; z-index: auto !important; }
+  .filter .filter-select__header { width: 100% !important; box-sizing: border-box !important; }
+  .filter .filter-select__dropdown {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    z-index: auto !important;
+  }
+  .filter .filter-select__list {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 6px !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin;
+  }
+  .filter .filter-select__item { flex: 0 0 auto !important; }
+  .filter .filter__submit { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+}
+
+/* Header stacking: content < filters < header < sticky portal < overlays.
+ * Mobile/overlay levels and filter internals are defined once above.
+ */
+@media (min-width: 1025px) {
+  body > .jtn2-chrome,
+  body.jetron-jtn2-chrome .jtn2-chrome {
+    position: relative !important;
+    z-index: 2147481500 !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+  }
+  body.jetron-jtn2-chrome .jtn2-chrome .jtn2-header {
+    position: relative !important;
+    z-index: 10 !important;
+    isolation: isolate !important;
+  }
+  body.jetron-design-preview .jtn2-header {
+    position: relative !important;
+    z-index: 2147481000 !important;
+  }
+  .jtn2-chrome .jtn2-wrap,
+  .jtn2-header,
+  .jtn2-header .jtn2-nav,
+  .jtn2-nav .jtn2-catalog-dd {
+    overflow: visible !important;
+  }
+  .jtn2-nav .jtn2-catalog-dd-menu {
+    background: #fff !important;
+  }
+  body.jetron-jtn2-chrome .jtn2-nav .jtn2-catalog-dd-menu {
+    opacity: 1 !important;
+  }
+  body:is(.post-type-archive-product, .tax-product_cat, [class*="term-"], [class*="woocommerce"]) .catalog {
+    position: relative !important;
+    z-index: 1 !important;
+    isolation: isolate !important;
+  }
+  body:is(.post-type-archive-product, .tax-product_cat, [class*="term-"], [class*="woocommerce"]) .catalog-menu {
+    position: relative !important;
+    z-index: 2 !important;
+    isolation: isolate !important;
+  }
+  .catalog__grid,
+  .catalog__grid > *,
+  .catalog__grid .card {
+    position: relative;
+    z-index: auto !important;
+  }
+}
+/* Wave portrait repair 20260920: match the actual #jtn-scene container geometry.
+ * The existing person window clips at the panel bottom and allows head/arm
+ * breakout above/left. Favorit and Legend retain their separate jf-people rules.
+ */
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy] {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: calc(-4 * var(--u)) !important;
+  right: auto !important;
+  width: auto !important;
+  height: calc(102 * var(--u)) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: left top !important;
+  transform: none !important;
+  translate: none !important;
+  scale: none !important;
+  rotate: none !important;
+}
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="pink"] {
+  left: max(calc(-6 * var(--u)), -36px) !important;
+}
+@media (max-width: 1024px) {
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy] {
+    height: calc(78 * var(--u)) !important;
+    left: calc(1.5 * var(--u)) !important;
+  }
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="cyan"] {
+    left: calc(6 * var(--u)) !important;
+  }
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="pink"] {
+    left: max(calc(-5 * var(--u)), -12px) !important;
+  }
+}
+
+/* Wave fine adjustment: desktop only, with unchanged size and vertical position. */
+@media (min-width: 1025px) {
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="red"] {
+    left: calc(-2 * var(--u)) !important;
+  }
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="blue"] {
+    left: calc(-4 * var(--u) + 20px) !important;
+  }
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="cyan"] {
+    left: calc(4 * var(--u)) !important;
+  }
+  body.jetron-home-design #jtn-scene .jtn2-player .jtn2-person-window:not(.jf-people) img.jtn2-boy[data-boy="white"] {
+    left: calc(-4 * var(--u) + 10px) !important;
+  }
+}
+/* All three collections: no rectangular swatch ring in any pointer/active state.
+ * Keyboard focus remains visible as a short underline, not a box around the kit.
+ */
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-swatches button[data-color-choice],
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-swatches button[data-color-choice] img {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-swatches button[data-color-choice]::before,
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-swatches button[data-color-choice]::after {
+  display: none !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+body.jetron-home-design #jtn-scene .jtn2-player .jtn2-swatches button[data-color-choice]:focus-visible::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: auto 25% -5px !important;
+  width: 50% !important;
+  height: 2px !important;
+  border-radius: 1px !important;
+  background: #F7F7F7 !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+/* Match the Wave DOM order even before the carousel JavaScript starts.
+ * jf-swatches (Favorit/Legend) intentionally keep their own order.
+ */
+body.jetron-home-design [data-jtn2] .jtn2-swatches:not(.jf-swatches) > [data-color-choice="red"] { order: 0 !important; }
+body.jetron-home-design [data-jtn2] .jtn2-swatches:not(.jf-swatches) > [data-color-choice="white"] { order: 1 !important; }
+body.jetron-home-design [data-jtn2] .jtn2-swatches:not(.jf-swatches) > [data-color-choice="cyan"] { order: 2 !important; }
+body.jetron-home-design [data-jtn2] .jtn2-swatches:not(.jf-swatches) > [data-color-choice="pink"] { order: 3 !important; }
+body.jetron-home-design [data-jtn2] .jtn2-swatches:not(.jf-swatches) > [data-color-choice="blue"] { order: 4 !important; }
+
+@media(min-width:1025px){body.jetron-jtn2-chrome :is(#jtn-scene,.jtn2-chrome) .jtn2-header:has(.jtn2-nav .jtn2-catalog-dd.is-open){z-index:100!important}}
+
+/* Keep the header above hero cards until the Catalog fade has finished. */
+@media(min-width:1025px){body.jetron-jtn2-chrome :is(#jtn-scene,.jtn2-chrome) .jtn2-header{transition:z-index 0s .36s!important}body.jetron-jtn2-chrome :is(#jtn-scene,.jtn2-chrome) .jtn2-header:has(.jtn2-nav .jtn2-catalog-dd.is-open){transition-delay:0s!important}}
+
+/* Align desktop catalogue chrome with the visible product grid at browser zoom.
+ * The 1320px catalogue container includes 15px padding on each side.
+ * Sticky geometry is measured from the natural header.
+ */
+@media (min-width: 1025px) {
+  body:is(.post-type-archive-product, .tax-product_cat, .tax-product_tag)
+    .jtn2-chrome .jtn2-wrap {
+    width: min(calc(100% - 60px), 1290px) !important;
+    max-width: 1290px !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+}
+
+/* Reviews: stable collapsed cards, full text on explicit expansion. */
+.reviews .review{box-sizing:border-box;height:360px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.reviews .review__header{display:flex;align-items:center;gap:12px;margin:0;min-width:0;flex:none}
+.reviews .review__name{flex:1;min-width:0;max-width:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;font-size:24px;line-height:1.4}
+.reviews .review__date{flex:none;white-space:nowrap}
+.reviews .review__avatar{flex:none}
+.reviews .review__text{margin:0;line-height:1.5}
+.reviews .review--ready .review__text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;max-height:6em;min-height:6em}
+.reviews .review__text p{margin:0 0 8px}
+.reviews .review__more{align-self:flex-start;border:0;padding:0;background:transparent;color:#622573;font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;flex:none}
+.reviews .review__more[hidden]{display:none}
+.reviews .review__gallery{display:flex;gap:8px;margin-top:auto;max-height:80px;overflow:hidden;flex:none}
+.reviews .review__gallery a,.reviews .review__gallery img{width:64px;height:80px;object-fit:cover;flex:none}
+.reviews .review.is-expanded{height:auto;min-height:360px}
+.reviews .review.is-expanded .review__text{display:block;max-height:none;min-height:0;overflow:visible;-webkit-line-clamp:unset}
+.reviews .review__more:focus-visible{outline:2px solid #622573;outline-offset:4px}
+@media(max-width:600px){.reviews .review{height:340px;padding:24px;gap:12px}.reviews .review__name{font-size:20px}.reviews .review__date{font-size:12px}.reviews .review__gallery a,.reviews .review__gallery img{height:64px}.reviews .review.is-expanded{height:auto;min-height:340px}}
+/* Match the supplied gallery reference: a 500ms crossfade and a slow 2s zoom. */
+.card .card__img{position:relative;overflow:hidden}
+.card .card__img > img{transform:none;transition:none}
+.card .card__hover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(1);transform-origin:center;pointer-events:none;transition:opacity .5s,transform 2s cubic-bezier(0,0,.44,1.18)}
+.card .card__hover img{width:100%;height:100%;object-fit:cover;transform:none;transition:none}
+@media(hover:hover) and (pointer:fine){
+ .card .card__btn{opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+ .card:hover .card__hover{opacity:1;transform:scale(1.09)}
+ .card:hover .card__btn,.card:focus-visible .card__btn{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){.card .card__hover,.card .card__btn{transition:none;transform:none!important}}
+
+/* Counts use the same centered box in both header layouts. */
+.jtn2-header .jtn2-cart-count{display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;min-width:18px;height:18px;padding:0 4px;font:700 11px/1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;text-align:center;border-radius:999px}
+.jtn2-header .jtn2-cart-count[hidden]{display:none!important}
+.card .card__title{min-height:2.8em;line-height:1.4}
+
+/* Commerce chrome follows the native page container, including its breakpoints. */
+body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-chrome .jtn2-wrap {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 1326px !important;
+  margin-inline: auto !important;
+  padding-inline: 15px !important;
+}
+@media (max-width: 1359px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-chrome .jtn2-wrap { width: 982px !important; }
+}
+@media (max-width: 991px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-chrome .jtn2-wrap { width: 750px !important; }
+}
+@media (max-width: 767px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-chrome .jtn2-wrap { width: 540px !important; }
+}
+@media (max-width: 575px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-chrome .jtn2-wrap { width: 100% !important; padding-inline: 8px !important; }
+}
+
+/* Sticky width is already measured from the same content box. */
+@media (max-width: 1024px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-sticky-portal .jtn2-header.is-jtn2-sticky {
+    max-width: none !important;
+  }
+}
+
+/* Keep the search hint readable within the narrower native desktop container. */
+@media (min-width: 1025px) and (max-width: 1359px) {
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-header .jtn2-search { min-width: 110px !important; }
+  body:is(.woocommerce-cart, .woocommerce-checkout) .jtn2-header :is(.jtn2-social, .jtn2-rating) { margin-right: 12px !important; }
+}

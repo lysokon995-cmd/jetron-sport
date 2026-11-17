@@ -1,0 +1,2011 @@
+/* jtn2-mobile-fix-v2: after mobile-fix.css, mobile-only ≤760px */
+@media (max-width: 1024px) {
+
+  /* Категории: финальный размер ДО JS (без вспышки крупных pills) */
+  .jtn2 .jtn2-cat-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    margin: 12px 0 16px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+  }
+
+  .jtn2 .jtn2-cat-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .jtn2 .jtn2-cat-tabs > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: #eee !important;
+    color: #252825 !important;
+    font: 400 12px/1 Arial, Helvetica, sans-serif !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+  }
+
+  .jtn2 .jtn2-cat-tabs > a:first-child {
+    background: #080909 !important;
+    color: #fff !important;
+  }
+
+
+  /* ЗАГОЛОВОК: +2px, больше расстояние между строками */
+
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+    clip-path: none !important;
+    white-space: normal !important;
+    font-size: clamp(23px, calc(6vw + 2px), 29px) !important;
+    gap: 4px !important;
+    padding-right: 3px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 span {
+    display: block !important;
+    width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  /* КНОПКА: читаемый текст, центрированная стрелка */
+
+  .jtn2 .jtn2-player {
+    --jtn-notch-button-height: 40px;
+    --jtn-notch-gap: 7px;
+    --jtn-notch-drop: 16.68px;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids-bar {
+    height: 40px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids-well > .jtn2-kids {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+    width: 154px !important;
+    min-width: 154px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 16px !important;
+    font: 400 22px/1 Arial, Helvetica, sans-serif !important;
+    white-space: nowrap !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids .jtn2-kids-desk {
+    display: none !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids .jtn2-kids-mob {
+    display: block !important;
+    font: inherit !important;
+    line-height: 1 !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids > [aria-hidden="true"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    width: 12px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font: 400 26px/1 Arial, sans-serif !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* КАТЕГОРИИ: выход до краёв экрана */
+
+  .jtn2 .jtn2-cat-tabs.jmx-categories {
+    display: block !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    scroll-snap-type: none !important;
+    touch-action: pan-y !important;
+  }
+
+  .jtn2 .jmx-category-track {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: max-content !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    will-change: transform;
+  }
+
+  .jtn2 .jmx-category-track > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: #eeeeee !important;
+    color: #252825 !important;
+    font: 400 12px/1 Arial, sans-serif !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    transition: background-color .45s ease, color .45s ease !important;
+  }
+
+  .jtn2 .jmx-category-track > a.jmx-current,
+  .jtn2 .jmx-category-track > a:focus-visible {
+    background: #080909 !important;
+    color: #fff !important;
+  }
+
+  /* НАНЕСЕНИЕ */
+
+  .jtn2 .jtn2-print.jtp {
+    background: #030609 !important;
+  }
+
+  .jtn2 .jtp .jtp-caption,
+  .jtn2 .jtp .jtp-copy,
+  .jtn2 .jtp .jtp-visual {
+    background: transparent !important;
+  }
+
+  /*
+   * Изображения имеют слегка неоднородный тёмный фон.
+   * Мягко сводим его края к фону карточки.
+   */
+  .jtn2 .jtp .jtp-visual {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 10%, #000 96%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 9%, #000 94%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 10%, #000 96%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 9%, #000 94%, transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .jtn2 .jtp .jtp-action a {
+    display: grid !important;
+    place-items: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 11px !important;
+  }
+
+  .jtn2 .jtp .jtp-action a svg {
+    width: 27px !important;
+    height: 27px !important;
+    transition: transform .2s ease !important;
+    transform-origin: center;
+  }
+
+  .jtn2 .jtp .jtp-action a:hover svg,
+  .jtn2 .jtp .jtp-action a:focus-visible svg,
+  .jtn2 .jtp .jtp-action a:active svg {
+    transform: scale(1.16);
+  }
+
+  /* НОВОЕ МЕНЮ: собственный слой в body */
+
+  body > .jmx-menu,
+  body > .jmx-menu * {
+    box-sizing: border-box;
+  }
+
+  body > .jmx-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    isolation: isolate;
+    font: 400 16px/1.4 Arial, Helvetica, sans-serif;
+    color: #252825;
+  }
+
+  body > .jmx-menu[hidden] {
+    display: none !important;
+  }
+
+  .jmx-menu .jmx-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(0 0 0 / 34%);
+  }
+
+  .jmx-menu .jmx-panel {
+    position: absolute;
+    inset: 0 0 0 auto;
+    z-index: 1;
+    display: block;
+    width: min(92vw, 410px);
+    height: 100%;
+    height: 100dvh;
+    padding: 0 22px calc(28px + env(safe-area-inset-bottom));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    background: #f7f7f7;
+    box-shadow: -12px 0 50px #0002;
+  }
+
+  .jmx-menu .jmx-top {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-end;
+    padding: calc(12px + env(safe-area-inset-top)) 0 12px;
+    background: #f7f7f7;
+  }
+
+  .jmx-menu .jmx-close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    color: #252825;
+    font: 30px/1 Arial, sans-serif;
+    cursor: pointer;
+  }
+
+  .jmx-menu .jmx-links {
+    display: block;
+    width: 100%;
+  }
+
+  .jmx-menu .jmx-links > a,
+  .jmx-menu .jmx-links > button,
+  .jmx-menu .jtn2-mnav-acc-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    min-height: 49px !important;
+    margin: 0 !important;
+    padding: 14px 2px !important;
+    border: 0 !important;
+    border-bottom: 1px solid #dedede !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #252825 !important;
+    font: 400 17px/1.35 Arial, sans-serif !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-btn span {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    transform: none !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    transition: transform .2s;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .jmx-menu .jtn2-mnav-acc-list {
+    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 8px 0 12px !important;
+    padding: 6px !important;
+    border-radius: 16px !important;
+    background: #ededed !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-list[hidden] {
+    display: none !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-list a {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 10px !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    color: #252825 !important;
+    font: 400 15px/1.35 Arial, sans-serif !important;
+    text-decoration: none !important;
+  }
+
+  /* Настоящая форма поиска из шапки */
+
+  .jmx-menu .jtn2-search {
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 48px !important;
+    margin: 0 0 20px !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 26px !important;
+    background: #fff !important;
+    color: #65749b !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .jmx-menu .jtn2-search:focus-within {
+    border-color: #86509e !important;
+    box-shadow: 0 0 0 3px #86509e18;
+  }
+
+  .jmx-menu .jtn2-search input[type="search"] {
+    display: block !important;
+    flex: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    color: #252825 !important;
+    font: 400 16px/1.3 Arial, sans-serif !important;
+    pointer-events: auto !important;
+  }
+
+  .jmx-menu .jtn2-search-go {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
+  }
+
+  .jmx-menu .jtn2-search-go svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+  }
+
+  .jmx-menu .jtn2-suggest {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    max-height: 42dvh !important;
+    padding: 8px !important;
+    overflow-y: auto !important;
+    border-radius: 15px !important;
+    background: #fff !important;
+    box-shadow: 0 10px 35px #0002;
+  }
+
+  .jmx-menu .jtn2-suggest[hidden] {
+    display: none !important;
+  }
+
+  .jmx-menu .jtn2-suggest a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 4px;
+    color: #252825;
+    text-decoration: none;
+  }
+
+  .jmx-menu .jtn2-suggest img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+  }
+
+  .jmx-menu .jtn2-suggest b,
+  .jmx-menu .jtn2-suggest small {
+    display: block;
+  }
+
+  .jmx-menu .jtn2-suggest b {
+    font-size: 13px;
+  }
+
+  .jmx-menu .jtn2-suggest small,
+  .jmx-menu .jtn2-suggest em {
+    font-size: 11px;
+  }
+
+  /* Те же SVG и ссылки, что в десктопной шапке */
+
+  .jmx-menu .jtn2-social {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin: 26px 0 18px !important;
+    padding: 0 !important;
+    color: #65749b !important;
+  }
+
+  .jmx-menu .jtn2-social a {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .jmx-menu .jtn2-social svg {
+    display: block !important;
+    width: 32px !important;
+    height: 32px !important;
+    fill: currentColor !important;
+    stroke: none !important;
+    overflow: visible !important;
+  }
+
+  .jmx-menu .jtn2-rating {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 170px !important;
+    min-height: 49px !important;
+    margin: 0 0 18px !important;
+    padding: 10px 16px !important;
+    border: 0 !important;
+    border-radius: 28px !important;
+    background: linear-gradient(100deg, #8250ae, #45175a) !important;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  .jmx-menu .jtn2-rating > span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 17px !important;
+    line-height: 1.1 !important;
+  }
+
+  .jmx-menu .jtn2-rating b {
+    color: #ffd15a !important;
+  }
+
+  .jmx-menu .jtn2-rating i {
+    color: #fff !important;
+    font-style: normal !important;
+  }
+
+  .jmx-menu .jtn2-rating small {
+    display: block !important;
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+  }
+
+  .jmx-menu :is(a, button):focus-visible {
+    outline: 2px solid #87509e;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jtn2 .jmx-category-track > a,
+    .jmx-menu svg {
+      transition: none !important;
+    }
+  }
+}
+
+/* jtn2-mobile-fix-v2-pass2 */
+@media (max-width: 1024px) {
+
+  /* Яндекс-рейтинг не показываем в мобильном меню */
+  .jmx-menu .jtn2-rating,
+  body > .jmx-menu .jtn2-rating {
+    display: none !important;
+  }
+
+  /* Нанесение: scale стрелки и картинки при появлении в кадре */
+  .jtn2 .jtn2-print.jtp {
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtp .jtp-visual {
+    overflow: visible !important;
+    transform: scale(1);
+    transform-origin: right center;
+    transition: transform .55s cubic-bezier(.2,.7,.2,1) !important;
+  }
+
+  .jtn2 .jtp .jtp-action a svg {
+    transition: transform .55s cubic-bezier(.2,.7,.2,1) !important;
+  }
+
+  .jtn2 .jtp.jmx-print-inview .jtp-visual {
+    transform: scale(1.1);
+  }
+
+  .jtn2 .jtp.jmx-print-inview .jtp-action a svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:hover svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:focus-visible svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:active svg {
+    transform: scale(1.22);
+  }
+}
+/* jtn2-mobile-fix-v2-pass3 */
+@media (max-width: 1024px) {
+
+  /* Заголовок + фичи: выравнивание по правому краю */
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    align-items: flex-end !important;
+    width: max-content !important;
+    max-width: 100% !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 span {
+    display: block !important;
+    width: max-content !important;
+    text-align: right !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    flex: 0 0 17px !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    background-position: center !important;
+    background-size: contain !important;
+  }
+
+  /* Нанесение: увеличивается весь блок */
+  .jtn2 .jtn2-print.jtp {
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform .55s cubic-bezier(.2,.7,.2,1) !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-print.jtp.jmx-print-inview {
+    transform: scale(1.045);
+  }
+
+  .jtn2 .jtp.jmx-print-inview .jtp-visual,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:hover svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:focus-visible svg,
+  .jtn2 .jtp.jmx-print-inview .jtp-action a:active svg {
+    transform: none !important;
+  }
+
+  /* Меню: крестик зафиксирован, скролл только у контента */
+  .jmx-menu .jmx-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    will-change: transform;
+    transition: transform .28s ease;
+  }
+
+  .jmx-menu .jmx-backdrop {
+    transition: opacity .28s ease;
+  }
+
+  .jmx-menu .jmx-top {
+    position: relative !important;
+    top: auto !important;
+    flex: 0 0 auto !important;
+    z-index: 6 !important;
+    padding: calc(12px + env(safe-area-inset-top)) 22px 10px !important;
+    background: #f7f7f7 !important;
+  }
+
+  .jmx-menu .jmx-scroll {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    padding: 0 22px calc(28px + env(safe-area-inset-bottom));
+  }
+
+  .jmx-menu .jtn2-search {
+    margin-top: 0 !important;
+  }
+}
+/* jtn2-mobile-fix-v2-pass3b */
+@media (max-width: 1024px) {
+  /* Общая правая вертикаль: заголовок + фичи + иконки */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: max-content !important;
+    max-width: 58% !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    width: 100% !important;
+    align-items: flex-end !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+/* jtn2-mobile-fix-v2-pass3c */
+@media (max-width: 1024px) {
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: grid !important;
+    grid-template-columns: 1fr 17px !important;
+    column-gap: 6px !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    width: 100% !important;
+    text-align: right !important;
+    gap: 6px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    grid-column: 2 !important;
+    justify-self: center !important;
+    flex: none !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+  }
+}
+/* jtn2-mobile-fix-v2-pass3d */
+@media (max-width: 1024px) {
+  /*
+   * Spacer ::before слева → текст и иконки прижаты к общему правому краю.
+   * Тогда «Д» и «Я» заканчиваются на одной вертикали.
+   */
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: flex !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    text-align: left !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::before {
+    content: "" !important;
+    display: block !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    content: "" !important;
+    display: block !important;
+    grid-column: auto !important;
+    flex: 0 0 17px !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    order: 3 !important;
+  }
+}
+/* jtn2-mobile-update-v2-pass3e */
+@media (max-width: 1024px) {
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: flex !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::before {
+    content: none !important;
+    display: none !important;
+    flex: none !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats .jmx-feat-text {
+    display: block !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    flex: 0 0 17px !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    order: 0 !important;
+  }
+}
+/* jtn2-mobile-update-v2-pass3f */
+@media (max-width: 1024px) {
+  /*
+   * «И» обрезалась слева, иконки наезжали на текст.
+   * Сдвигаем copy вправо, даём ширину и зазор до иконок.
+   */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    z-index: 7 !important;
+    box-sizing: border-box !important;
+    width: min(100%, 220px) !important;
+    max-width: 64% !important;
+    margin: 0 !important;
+    padding: 38px 8px 0 28px !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    overflow: visible !important;
+    clip-path: none !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 span {
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 18px !important;
+    column-gap: 10px !important;
+    align-items: center !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats .jmx-feat-text {
+    display: block !important;
+    flex: none !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    letter-spacing: .08em !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    grid-column: 2 !important;
+    justify-self: end !important;
+    flex: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    margin: 0 !important;
+  }
+}
+/* jtn2-mobile-update-v2-pass3g */
+@media (max-width: 1024px) {
+  /*
+   * max-width:64% сжимал copy до ~129px → «И» клип, иконки на тексте.
+   * Фиксируем ширину и сдвигаем блок вправо.
+   */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    width: 200px !important;
+    min-width: 190px !important;
+    max-width: calc(100% - 120px) !important;
+    margin: 0 0 0 6px !important;
+    padding: 36px 14px 0 22px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    font-size: clamp(20px, 5.4vw, 26px) !important;
+    letter-spacing: -.01em !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    grid-template-columns: minmax(0, 1fr) 20px !important;
+    column-gap: 12px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats .jmx-feat-text {
+    letter-spacing: .06em !important;
+    font-size: clamp(8px, 2.1vw, 10px) !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+  }
+}
+/* jtn2-mobile-update-v2-pass3h */
+@media (max-width: 1024px) {
+  /*
+   * Заголовок +2px, больше gap между «Игровая»/«форма»,
+   * вся copy-композиция (текст + свотчи) −4px влево и +5px вниз.
+   */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    margin-left: 6px !important;
+    padding-top: 41px !important; /* было 36px → +5px вниз */
+    padding-left: 18px !important; /* было 22px → −4px влево */
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    gap: 6px !important;
+    font-size: clamp(22px, calc(5.4vw + 2px), 28px) !important;
+  }
+}
+/* jtn2-mobile-update-v2-pass3i */
+@media (max-width: 1024px) {
+  /* Заголовок + фичи с иконками ещё −5px влево */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    padding-left: 13px !important; /* было 18px → −5px */
+  }
+}
+
+/* jtn2-mobile-update-v2-pass4-left */
+@media (max-width: 1024px) {
+  /*
+   * Выравнивание по ЛЕВОМУ краю — как у красной свотчи.
+   * Раньше text-align:right / align-items:flex-end держали
+   * глифы справа, поэтому сдвиги padding почти не были видны.
+   */
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 70% !important;
+    margin: 0 !important;
+    /* свотчи внутри copy: их left ≈ padding-left copy.
+       Держим тот же внутренний отступ, что у ряда свотчей. */
+    padding: 41px 10px 0 19px !important;
+    overflow: visible !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+    gap: 6px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    clip-path: none !important;
+    text-align: left !important;
+    font-size: clamp(22px, calc(5.4vw + 2px), 28px) !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 span {
+    display: block !important;
+    width: max-content !important;
+    max-width: none !important;
+    text-align: left !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 9px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li {
+    display: flex !important;
+    grid-template-columns: none !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+    text-align: left !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats .jmx-feat-text {
+    display: block !important;
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    letter-spacing: .08em !important;
+    font-size: clamp(8px, 2.1vw, 10px) !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:first-child::after,
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-player-feats li:last-child::after {
+    content: "" !important;
+    display: block !important;
+    flex: 0 0 16px !important;
+    grid-column: auto !important;
+    order: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    margin: 0 !important;
+    justify-self: auto !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy .jtn2-swatches {
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+
+/* player compact pass16: shorter block like reference */
+@media (max-width: 1024px) {
+  .jtn2 .jtn2-player {
+    height: 228px !important;
+    min-height: 228px !important;
+    margin-top: 10px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy {
+    padding: 14px 8px 0 14px !important;
+    width: 52% !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-copy h2 {
+    margin: 0 0 8px !important;
+    font-size: clamp(17px, 4.8vw, 21px) !important;
+    line-height: 1.02 !important;
+    gap: 0 !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-feats {
+    gap: 5px !important;
+    margin: 0 !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-feats li {
+    font-size: clamp(7px, 2vw, 9px) !important;
+    letter-spacing: .1em !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-player-feats li::after {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-swatches {
+    margin-top: 10px !important;
+    gap: 5px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-swatches button {
+    width: 36px !important;
+    height: 46px !important;
+    min-width: 36px !important;
+    min-height: 46px !important;
+    padding: 3px !important;
+    border-radius: 8px !important;
+  }
+
+  /* boy higher / tighter more at bottom */
+  .jtn2 .jtn2-player {
+    --jtn-portrait-headroom: 18px !important;
+    --jtn-portrait-height: 215% !important;
+    --jtn-portrait-left: -6% !important;
+    --jtn-notch-button-height: 34px !important;
+    --jtn-notch-drop: 14px !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-person-window {
+    top: calc(-1 * var(--jtn-portrait-headroom)) !important;
+    bottom: var(--jtn-notch-drop, 14px) !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-person-window img.jtn2-boy,
+  .jtn2 .jtn2-player .jtn2-person-window img.jtn2-boy[data-boy] {
+    height: var(--jtn-portrait-height) !important;
+    object-position: center 8% !important;
+  }
+
+  .jtn2 .jtn2-player .jtn2-kids-well > .jtn2-kids {
+    height: var(--jtn-notch-button-height) !important;
+    min-height: var(--jtn-notch-button-height) !important;
+    padding: 0 18px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* mobile chrome + modal layering pass17 */
+@media (max-width: 1024px) {
+  /* Callback/cart overlays must always cover site chrome and the drawer. */
+  body > .modal,
+  body > .js-modal,
+  #js-modal-callback,
+  #js-modal-cart {
+    z-index: 2147483200 !important;
+  }
+
+  /* Inner-page mobile header: same neutral base as hero, with brand accent. */
+  body .jtn2.jtn2-chrome {
+    position: relative;
+    z-index: 9000 !important;
+    background: #eeeeee !important;
+    color: #252825 !important;
+    border-bottom: 1px solid rgba(37, 40, 37, .10) !important;
+    box-shadow: 0 8px 26px rgba(20, 24, 36, .05) !important;
+  }
+
+  body .jtn2.jtn2-chrome::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    pointer-events: none;
+    background: linear-gradient(90deg, #082c70 0%, #63709d 52%, #8c418c 100%);
+    opacity: .72;
+  }
+
+  body .jtn2.jtn2-chrome .jtn2-wrap,
+  body .jtn2.jtn2-chrome .jtn2-header {
+    background: transparent !important;
+  }
+
+  body .jtn2.jtn2-chrome .jtn2-header {
+    position: relative;
+    z-index: 1 !important;
+  }
+
+  body .jtn2.jtn2-chrome .jtn2-actions,
+  body .jtn2.jtn2-chrome .jtn2-cart,
+  body .jtn2.jtn2-chrome .jtn2-menu-btn {
+    color: #252825 !important;
+  }
+
+  body .jtn2.jtn2-chrome .jtn2-menu-btn[aria-expanded="true"] {
+    color: #63709d !important;
+  }
+
+  /* Drawer uses the same surface and accent system as the hero/header. */
+  body > .jmx-menu {
+    z-index: 2147483000 !important;
+  }
+
+  .jmx-menu .jmx-panel,
+  .jmx-menu .jmx-top {
+    background: #eeeeee !important;
+  }
+
+  .jmx-menu .jmx-panel {
+    border-left: 1px solid rgba(37, 40, 37, .10) !important;
+    box-shadow: -14px 0 44px rgba(20, 24, 36, .16) !important;
+  }
+
+  .jmx-menu .jmx-close {
+    border-color: rgba(99, 112, 157, .24) !important;
+    background: #f7f7f7 !important;
+    color: #252825 !important;
+  }
+
+  .jmx-menu .jtn2-mnav-acc-list {
+    background: #e5e6e9 !important;
+  }
+
+  .jmx-menu .jtn2-search {
+    border-color: rgba(99, 112, 157, .20) !important;
+    background: #f7f7f7 !important;
+  }
+
+  .jmx-menu .jtn2-search:focus-within {
+    border-color: #63709d !important;
+    box-shadow: 0 0 0 3px rgba(99, 112, 157, .14) !important;
+  }
+
+  .jmx-menu :is(a, button):focus-visible {
+    outline-color: #63709d !important;
+  }
+
+  /* Do not leave a purple focus/tap tile on the persistent mobile header after menu close. */
+  .jtn2 .jtn2-logo,
+  .jtn2 .jtn2-logo:focus,
+  .jtn2 .jtn2-logo:focus-visible,
+  .jtn2 .jtn2-logo:active,
+  .jtn2 .jtn2-menu-btn,
+  .jtn2 .jtn2-menu-btn:focus,
+  .jtn2 .jtn2-menu-btn:focus-visible,
+  .jtn2 .jtn2-menu-btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .jtn2 .jtn2-logo img {
+    background: transparent !important;
+  }
+
+  /* Callback modal: same visual language as hero/header/menu. */
+  #js-modal-callback {
+    background: rgba(15, 20, 32, .52) !important;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+  }
+
+  #js-modal-callback .modal__inner {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100% - 24px) !important;
+    max-width: 520px !important;
+    max-height: calc(100dvh - 32px) !important;
+    margin: 0 !important;
+    padding: 28px 20px 24px !important;
+    border: 1px solid rgba(99, 112, 157, .18) !important;
+    border-radius: 24px !important;
+    background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,242,245,.98)) !important;
+    box-shadow: 0 28px 80px rgba(14, 20, 38, .28) !important;
+    color: #252825 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  #js-modal-callback .modal__inner::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1f2733 0%, #3c4656 58%, #687487 100%);
+  }
+
+  #js-modal-callback .modal__close {
+    top: 16px !important;
+    right: 16px !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border: 1px solid rgba(99, 112, 157, .18) !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    color: #252825 !important;
+  }
+
+  #js-modal-callback .modal__close svg,
+  #js-modal-callback .modal__close use {
+    fill: currentColor !important;
+    color: currentColor !important;
+  }
+
+  #js-modal-callback .modal__title,
+  #js-modal-callback .modal__title.section-title {
+    width: 220px !important;
+    max-width: calc(100% - 54px) !important;
+    margin: 0 0 12px !important;
+    color: #252825 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(24px, 6.7vw, 31px) !important;
+    font-weight: 700 !important;
+    line-height: 1.06 !important;
+    letter-spacing: -.025em !important;
+    text-transform: none !important;
+  }
+
+  #js-modal-callback .modal__subtitle,
+  #js-modal-callback .modal__subtitle.section-desc {
+    margin: 0 0 24px !important;
+    color: #5f6672 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.45 !important;
+  }
+
+  #js-modal-callback .callback-form__input {
+    height: 56px !important;
+    margin: 0 0 18px !important;
+    padding: 0 18px !important;
+    border: 1px solid rgba(99, 112, 157, .26) !important;
+    border-radius: 16px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #252825 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 18px !important;
+  }
+
+  #js-modal-callback .callback-form__input::placeholder {
+    color: #8b91a2 !important;
+    opacity: 1 !important;
+  }
+
+  #js-modal-callback .callback-form__input:focus {
+    border-color: #687487 !important;
+    box-shadow: 0 0 0 3px rgba(104, 116, 135, .12) !important;
+    outline: none !important;
+  }
+
+  #js-modal-callback .callback-form__agree {
+    margin: 0 0 24px !important;
+  }
+
+  #js-modal-callback .callback-form__agree .wpcf7-list-item-label {
+    padding-left: 38px !important;
+    color: #676d7e !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  #js-modal-callback .callback-form__agree .wpcf7-list-item-label::before {
+    top: 1px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border: 1px solid rgba(99, 112, 157, .42) !important;
+    border-radius: 7px !important;
+    background: #fff !important;
+  }
+
+  #js-modal-callback .callback-form__agree input:checked + .wpcf7-list-item-label::before {
+    border-color: #687487 !important;
+    background: #687487 !important;
+  }
+
+  #js-modal-callback .callback-form__agree input:checked + .wpcf7-list-item-label::after {
+    border-color: #fff !important;
+  }
+
+  #js-modal-callback .callback-form__btn-wrap {
+    justify-content: flex-end !important;
+  }
+
+  #js-modal-callback .callback-form__btn {
+    width: auto !important;
+    min-width: 170px !important;
+    height: 52px !important;
+    margin: 0 !important;
+    padding: 0 22px !important;
+    border: 0 !important;
+    border-radius: 15px !important;
+    background: linear-gradient(105deg, #252825 0%, #3b4149 100%) !important;
+    box-shadow: 0 10px 24px rgba(27, 31, 36, .16) !important;
+    color: #fff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: .02em !important;
+  }
+
+  #js-modal-callback .wpcf7-response-output,
+  #js-modal-callback .screen-reader-response {
+    color: #252825 !important;
+  }
+
+  /* Hard mobile scroll lock while callback modal is open. */
+  html:has(#js-modal-callback.is-open),
+  body.noscroll,
+  body.jtn2-noscroll {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  body.noscroll > *:not(#js-modal-callback),
+  body.jtn2-noscroll > *:not(#js-modal-callback) {
+    touch-action: none !important;
+  }
+
+  #js-modal-callback {
+    overscroll-behavior: contain !important;
+    touch-action: none !important;
+  }
+
+  #js-modal-callback .modal__inner {
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* jtn2 mobile menu pass19: continuation of header */
+@media (max-width: 1024px) {
+  body > .jmx-menu {
+    top: 70px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    z-index: 2147483000 !important;
+    color: #252825 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .22s ease, visibility 0s linear .22s;
+  }
+
+  body > .jmx-menu.is-open,
+  body > .jmx-menu.is-closing {
+    visibility: visible;
+  }
+
+  body > .jmx-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  body > .jmx-menu .jmx-backdrop {
+    z-index: 1 !important;
+    inset: 0 !important;
+    background: rgba(31, 39, 51, .12) !important;
+    opacity: 0;
+    transition: opacity .30s ease !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  body > .jmx-menu.is-open .jmx-backdrop {
+    opacity: 1;
+  }
+
+  body > .jmx-menu .jmx-panel {
+    position: relative !important;
+    z-index: 2 !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border: 0 !important;
+    border-top: 1px solid rgba(37, 40, 37, .08) !important;
+    border-radius: 0 !important;
+    background: #eeeeee !important;
+    box-shadow: 0 16px 32px rgba(31, 39, 51, .08) !important;
+    transform: translate3d(0,-8px,0) !important;
+    opacity: .64;
+    transition: transform .34s cubic-bezier(.22,.78,.24,1), opacity .28s ease !important;
+  }
+
+  body > .jmx-menu.is-open .jmx-panel {
+    transform: translate3d(0,0,0) !important;
+    opacity: 1;
+  }
+
+  body > .jmx-menu .jmx-top {
+    display: none !important;
+  }
+
+  body > .jmx-menu .jmx-scroll {
+    padding: 10px 20px calc(28px + env(safe-area-inset-bottom)) !important;
+    background: #eeeeee !important;
+  }
+
+  body > .jmx-menu .jmx-phone {
+    position: relative !important;
+    z-index: 4 !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 50px !important;
+    margin: 0 0 4px !important;
+    padding: 4px 0 11px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(37, 40, 37, .12) !important;
+    color: #252825 !important;
+    font: 700 20px/1.15 Arial, Helvetica, sans-serif !important;
+    letter-spacing: -.018em !important;
+    text-decoration: none !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body > .jmx-menu .jmx-links {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  body > .jmx-menu .jmx-links > a,
+  body > .jmx-menu .jmx-links > button.jtn2-mnav-call {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #252825 !important;
+    font: 400 15px/1.35 Arial, Helvetica, sans-serif !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  body > .jmx-menu .jmx-links > a:active,
+  body > .jmx-menu .jmx-links > button.jtn2-mnav-call:active {
+    opacity: .58 !important;
+  }
+
+  body > .jmx-menu .jmx-links > button.jtn2-mnav-call {
+    color: #252825 !important;
+    font-weight: 700 !important;
+  }
+
+  body > .jmx-menu .jmx-group-divider {
+    display: block !important;
+    width: 100% !important;
+    height: 10px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(37, 40, 37, .12) !important;
+  }
+
+  body > .jmx-menu .jmx-footer {
+    margin: 15px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  body > .jmx-menu .jmx-messengers-title {
+    margin: 0 0 10px !important;
+    color: #5f6672 !important;
+    font: 600 12px/1.25 Arial, Helvetica, sans-serif !important;
+    letter-spacing: .035em !important;
+  }
+
+  body > .jmx-menu .jtn2-social {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 18px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 4px !important;
+  }
+
+  body > .jmx-menu .jtn2-social a {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  body > .jmx-menu .jtn2-social svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  body > .jmx-menu .jmx-collapse {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 46px !important;
+    margin: 14px 0 0 !important;
+    padding: 10px 0 2px !important;
+    border: 0 !important;
+    border-top: 1px solid rgba(37, 40, 37, .12) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #252825 !important;
+    font: 600 14px/1.25 Arial, Helvetica, sans-serif !important;
+    text-align: left !important;
+  }
+
+  body > .jmx-menu .jmx-collapse-mark {
+    flex: 0 0 auto !important;
+    width: 18px !important;
+    height: 11px !important;
+    color: #687487 !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.6 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    margin-left: 14px !important;
+  }
+
+  /* Same base surface as the desktop hero (#eee). */
+  body .jtn2.jtn2-chrome,
+  body > .jmx-menu,
+  body > .jmx-menu .jmx-panel,
+  body > .jmx-menu .jmx-scroll {
+    background: #eeeeee !important;
+    background-color: #eeeeee !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body > .jmx-menu,
+    body > .jmx-menu .jmx-backdrop,
+    body > .jmx-menu .jmx-panel {
+      transition: none !important;
+    }
+  }
+}
+
+
+/* jtn2 mobile side cards under calculator */
+@media (max-width: 1024px) {
+  body .jtn2 .jtn2-side {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 18px 0 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    align-self: auto !important;
+    background: transparent !important;
+  }
+
+  body .jtn2 .jtn2-side-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 18px !important;
+    background: #f7f7f7 !important;
+    box-shadow: none !important;
+  }
+
+  body .jtn2 .jtn2-side-card > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 13px !important;
+  }
+
+  body .jtn2 .jtn2-side-card > div {
+    position: relative !important;
+    min-height: 96px !important;
+    padding: 12px 38px 10px 2px !important;
+  }
+
+  body .jtn2 .jtn2-side-card h3 {
+    margin: 0 !important;
+    color: #252825 !important;
+    font: 700 clamp(17px, 4.8vw, 22px)/1.05 Arial, Helvetica, sans-serif !important;
+    letter-spacing: -.025em !important;
+  }
+
+  body .jtn2 .jtn2-side-card p {
+    margin: 8px 0 0 !important;
+    color: #252825 !important;
+    font: 400 13px/1.25 Arial, Helvetica, sans-serif !important;
+  }
+
+  body .jtn2 .jtn2-side-card .jtn2-arrow {
+    position: absolute !important;
+    top: 10px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    border: 1px solid rgba(37,40,37,.45) !important;
+    border-radius: 11px !important;
+    background: transparent !important;
+    color: #252825 !important;
+  }
+
+  body .jtn2 .jtn2-side-card .jtn2-arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  body .jtn2 .jtn2-calc {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* jtn2 mobile pass24: side-card titles match kit/printing mobile title scale */
+@media (max-width: 1024px) {
+  #jtn-scene .jtn2-side-card h3 {
+    font-size: clamp(16px, 4.4vw, 20px) !important;
+    font-weight: 750 !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.025em !important;
+  }
+}
+
+/* Side product typography: desktop matches neighboring cards; mobile follows client reference. */
+@media (min-width: 1025px) {
+  #jtn-scene .jtn2-side-card h3 {
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+    font-weight: 750 !important;
+    letter-spacing: -.02em !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #jtn-scene .jtn2-side-card h3 {
+    font-size: clamp(19px, 5.15vw, 22px) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    letter-spacing: -.025em !important;
+  }
+}
+
+/* jtn2 side cards pass: wider desktop rail + stable mobile spacing */
+@media (min-width: 1025px) {
+  #jtn-scene .jtn2-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(185px, 15vw, 245px) !important;
+  }
+
+  #jtn-scene .jtn2-side-card > div {
+    padding-right: 38px !important;
+  }
+
+  #jtn-scene .jtn2-side-card h3 {
+    max-width: calc(100% - 2px) !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #jtn-scene .jtn2-side {
+    margin-top: 18px !important;
+    transform: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card,
+  #jtn-scene .jtn2-side-card:hover,
+  #jtn-scene .jtn2-side-card:focus,
+  #jtn-scene .jtn2-side-card:focus-within,
+  #jtn-scene .jtn2-side-card:active {
+    transform: none !important;
+    transition: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #jtn-scene .jtn2-side-card > img,
+  #jtn-scene .jtn2-side-card:hover > img,
+  #jtn-scene .jtn2-side-card:focus-within > img,
+  #jtn-scene .jtn2-side-card:active > img,
+  #jtn-scene .jtn2-side-card .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:hover .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus-within .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:active .jtn2-arrow {
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+}
+
+/* pass24: mobile side cards — match neighboring title scale and kill sticky touch hover */
+@media (max-width: 1024px) {
+  #jtn-scene .jtn2-side {
+    margin-top: 18px !important;
+    transform: none !important;
+    translate: none !important;
+    animation: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card,
+  #jtn-scene .jtn2-side-card:hover,
+  #jtn-scene .jtn2-side-card:focus,
+  #jtn-scene .jtn2-side-card:focus-visible,
+  #jtn-scene .jtn2-side-card:focus-within,
+  #jtn-scene .jtn2-side-card:active {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card > img,
+  #jtn-scene .jtn2-side-card:hover > img,
+  #jtn-scene .jtn2-side-card:focus-within > img,
+  #jtn-scene .jtn2-side-card:active > img {
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:hover .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus-visible .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:focus-within .jtn2-arrow,
+  #jtn-scene .jtn2-side-card:active .jtn2-arrow {
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card h3 {
+    font-size: clamp(15px, 4.4vw, 20px) !important;
+    font-weight: 750 !important;
+    line-height: 1.18 !important;
+    letter-spacing: -.025em !important;
+  }
+}
+
+/* jtn2 mobile pair pass24: lock calculator-to-side spacing and exact title scale */
+@media (max-width: 1024px) {
+  #jtn-scene .jtn2-main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #jtn-scene .jtn2-calc,
+  #jtn-scene .jtn2-calc:hover,
+  #jtn-scene .jtn2-calc:focus,
+  #jtn-scene .jtn2-calc:focus-visible,
+  #jtn-scene .jtn2-calc:focus-within,
+  #jtn-scene .jtn2-calc:active {
+    transform: none !important;
+    scale: 1 !important;
+    translate: none !important;
+    transition-property: background-color, color !important;
+    margin-bottom: 0 !important;
+  }
+
+  #jtn-scene .jtn2-calc:hover .jtn2-calc-arrow,
+  #jtn-scene .jtn2-calc:focus .jtn2-calc-arrow,
+  #jtn-scene .jtn2-calc:focus-visible .jtn2-calc-arrow,
+  #jtn-scene .jtn2-calc:active .jtn2-calc-arrow {
+    transform: none !important;
+    translate: none !important;
+  }
+
+  #jtn-scene .jtn2-side {
+    margin-top: 26px !important;
+    padding-top: 0 !important;
+    transform: none !important;
+    translate: none !important;
+  }
+
+  #jtn-scene .jtn2-side-card h3 {
+    font-size: 16px !important;
+    font-weight: 750 !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.025em !important;
+  }
+}
+
+
+/* Shared layers and sticky geometry; replaces the successive pass25-pass28 overrides. */
+.jtn2, .jtn2.jtn2-chrome, #jtn-scene.jtn2 { isolation: auto !important; }
+.jtn2 .jtn2-header { position: relative; z-index: 2147482000 !important; }
+.jtn2 .jtn2-header.is-jtn2-sticky {
+  position: fixed !important;
+  z-index: 2147482000 !important;
+  top: 0 !important;
+  left: var(--jtn-sticky-left, 0px) !important;
+  width: var(--jtn-sticky-width, auto) !important;
+  height: var(--jtn-sticky-height, auto) !important;
+  min-height: var(--jtn-sticky-height, auto) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  isolation: isolate !important;
+  box-shadow: 0 8px 24px rgba(31,39,51,.08) !important;
+}
+.jtn2 .jtn2-header.is-jtn2-sticky::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 50% !important;
+  width: 100vw !important;
+  transform: translateX(-50%) !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  border-bottom: 1px solid rgba(37,40,37,.10) !important;
+}
+body.jetron-design-preview .jtn2 .jtn2-header.is-jtn2-sticky,
+body.jetron-design-preview .jtn2 .jtn2-header.is-jtn2-sticky::before { background: #fff !important; }
+body:not(.jetron-design-preview) .jtn2 .jtn2-header.is-jtn2-sticky,
+body:not(.jetron-design-preview) .jtn2 .jtn2-header.is-jtn2-sticky::before { background: #eee !important; }
+.jtn2-sticky-spacer { display: block; width: 100%; height: 0; margin: 0; padding: 0; border: 0; pointer-events: none; }
+body .jtn2.jtn2-chrome::after { content: none !important; display: none !important; background: none !important; }
+body > .jmx-menu, .jtn2 .jtn2-mnav, .jm-overlay { z-index: 2147483000 !important; }
+body > .modal, body .modal.js-modal, .modal, .js-modal, #js-modal-size, #js-modal-cart, #js-modal-callback, #js-modal-team,
+#js-modal-gaiter, .modal-size, .modal-basket, .modal-success, .team-order, .delivery,
+.fancybox__container, .mfp-wrap, .mfp-bg, .pswp, .ui-dialog, .ui-widget-overlay { z-index: 2147483400 !important; }
+.modal__inner, .modal-team { z-index: 2147483401 !important; }
+.modal > .modal-size, .modal > .team-order, .modal > .delivery,
+.modal > .modal-basket, .modal > .modal-success, .modal > .modal__inner {
+  inset: 50% auto auto 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-height: calc(100dvh - 32px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+@media (max-width: 1024px) {
+  body .jtn2.jtn2-chrome { z-index: auto !important; border-bottom: 0 !important; box-shadow: none !important; overflow: visible !important; }
+  .jtn2 .jtn2-header, .jtn2 .jtn2-header.is-jtn2-sticky { background: #eee !important; border-radius: 0 !important; }
+  .jtn2 .jtn2-header::before, .jtn2 .jtn2-header::after { border-radius: 0 !important; }
+  body.jetron-design-preview #jtn-scene.jtn2,
+  body.jetron-design-preview #jtn-scene.jtn2 > .jtn2-wrap,
+  body.jetron-design-preview #jtn-scene.jtn2 > .jtn2-wrap > .jtn2-header,
+  body.jetron-design-preview .jtn2-sticky-shell,
+  body.jetron-design-preview .jtn2-sticky-shell .jtn2-wrap,
+  body.jetron-design-preview .jtn2-sticky-shell .jtn2-header { --bg: #fff !important; background: #fff !important; }
+  body.jetron-design-preview #jtn-scene.jtn2 > .jtn2-wrap,
+  body.jetron-design-preview .jtn2-sticky-shell .jtn2-wrap { box-shadow: none !important; }
+  body.jetron-design-preview #jtn-scene.jtn2 > .jtn2-wrap > .jtn2-header { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; border: 0 !important; }
+  body:not(.jetron-design-preview) .jtn2.jtn2-chrome,
+  body:not(.jetron-design-preview) .jtn2-sticky-shell,
+  body:not(.jetron-design-preview) .jtn2-sticky-shell .jtn2-wrap,
+  body:not(.jetron-design-preview) .jtn2-sticky-shell .jtn2-header { background: #eee !important; }
+  .jtn2 .jtn2-header.is-jtn2-sticky { max-width: calc(100vw - 30px) !important; overflow: visible !important; }
+  .modal > .modal-size, .modal > .team-order, .modal > .delivery,
+  .modal > .modal-basket, .modal > .modal-success, .modal > .modal__inner {
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+  }
+}
