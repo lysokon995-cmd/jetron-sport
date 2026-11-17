@@ -13,7 +13,7 @@ body :is(.catalog-menu__text,.model,.jvw__card,.review,.faq__item,.discounts__it
 body .catalog-menu__text { color:#252824!important; }
 body .catalog-menu__text::after { background-color:#622573!important; }
 body :is(.callback__content,.how-order,.footer) { background:#F7F7F7!important; color:#252824!important; }
-body .callback__content :is(h2,p,label,.wpcf7-list-item-label,.jtn-recaptcha-notice),body .how-order :is(h2,p),body .footer :is(a,p,span,small,li,h2,h3,button) { color:#252824!important; }
+body .callback__content :is(h2,p,label,.wpcf7-list-item-label),body .how-order :is(h2,p),body .footer :is(a,p,span,small,li,h2,h3,button) { color:#252824!important; }
 body .callback-form__input { background:#FFFFFF!important; color:#252824!important; border-color:#687487!important; }
 body .callback-form__input::placeholder { color:#687487!important; opacity:1!important; }
 body .footer :is(.footer-menu__title,.support__title) { color:#622573!important; }
@@ -69,4 +69,9 @@ body #jtn-scene .jtn2-controls .jtn2-check-ico { visibility:visible!important; o
 /* Preserve the original header palette, gradients and cart badge. */
 body :is(.jtn2-header,.jtn2-top) { --bg:#eee!important; --ink:#252824!important; --muted:#63709d!important; --hover:#632b79!important; }
 body .jtn2-header .jtn2-cart-count { background:#cf432a!important; color:#fff!important; }
+/* FAQ: selected state uses the shared accent; pointer hover uses dark ink. */
+body .faq .accordion__header.open { border-top-color:var(--preview-accent)!important; }
+body .faq .accordion__header.open .accordion__arr { background-color:var(--preview-accent)!important; }
+body .faq .accordion__header:hover .accordion__arr { background-color:var(--preview-ink)!important; }
+body .faq .accordion__header:is(.open,:hover) .accordion__arr svg { stroke:#FFFFFF!important; }
 }

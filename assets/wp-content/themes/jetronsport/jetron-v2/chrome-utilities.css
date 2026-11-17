@@ -1,8 +1,4 @@
-/* Jetronsport utilities: keep reCAPTCHA active; hide only its badge. */
-.grecaptcha-badge{visibility:hidden!important}
-.jtn-recaptcha-notice{font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#687487;margin:12px 0}
-.jtn-recaptcha-notice a{color:inherit;text-decoration:underline}
-.jtn-recaptcha-footer{padding:16px; margin:0;text-align:center;background:#EEEEEE;color:#252825}
+/* Jetronsport back-to-top control. reCAPTCHA keeps its native badge. */
 #jtn-scroll-top{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));width:44px;height:44px;display:grid;place-items:center;padding:0;border:1px solid #687487;border-radius:8px;background:#F7F7F7;color:#252825;z-index:1000;cursor:pointer}
 #jtn-scroll-top[hidden]{display:none!important}
 #jtn-scroll-top svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
