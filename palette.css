@@ -48,8 +48,6 @@ body .review__more:hover, body .jtn-cookie-toggle:hover { color:#252824!importan
 body :is(button,a,input):not(.jtn2-header *):not(.jtn2-top *):focus-visible { outline:2px solid #622573!important; outline-offset:3px!important; }
 body input { accent-color:#622573; }
 body ::selection { background:#622573; color:#FFFFFF; }
-/* The review file is a frozen page: hide operational overlays and preserve screen layout. */
-.r1ship-city-modal,.r1ship-city-modal-overlay,.r1ship-city-toast,.jtn2-sticky-portal { display:none!important; }
 html { scroll-behavior:smooth; }
 
 body .teams { background-image:none!important; }
