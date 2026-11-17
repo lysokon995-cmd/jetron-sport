@@ -5,3 +5,5 @@
 #jtn-scroll-top:hover{background:#EEEEEE}
 #jtn-scroll-top:focus-visible{outline:2px solid #252825;outline-offset:3px}
 body.jmx-menu-open #jtn-scroll-top,body.noscroll #jtn-scroll-top,body.jtn2-noscroll #jtn-scroll-top{display:none!important}
+/* Leave the native badge clear of the back-to-top control after form protection loads. */
+body:has(.grecaptcha-badge) #jtn-scroll-top{bottom:calc(84px + env(safe-area-inset-bottom))}
