@@ -8,7 +8,6 @@ body :is(.application,.materials,.callback,.works,.how-order,.footer) { backgrou
 body .jtn2-main h1 span { background:none!important; -webkit-text-fill-color:#622573!important; color:#622573!important; }
 body .jtn2 :is(.j81-price,.j81-price--red,.j81-badge,.mobile-card-price),body :is(.design__price,.banner__price,.discounts__text strong) { color:#622573!important; }
 body .jtn2 :is(.j77-dot.is-active,.j77-dot.active,.j77-nav-segs .active) { background:#622573!important; }
-body .jtn2 .jtn2-check :is(.jtn2-check-face,.jtn2-check-shade) { fill:#622573!important; background:#622573!important; }
 body :is(.catalog-menu__text,.model,.jvw__card,.review,.faq__item,.discounts__item) { background-color:#FFFFFF!important; }
 body .catalog-menu__text { color:#252824!important; }
 body .catalog-menu__text::after { background-color:#622573!important; }
@@ -51,8 +50,6 @@ body .callback__wrap { background:#622573!important; }
 body .footer .support__addr { color:#252824!important; }
 body #jtn-scene .jtn2-controls .jtn2-check { background:none!important; mix-blend-mode:normal!important; }
 body #jtn-scene .jtn2-controls .jtn2-check-ico { display:block!important; width:100%!important; height:100%!important; }
-body #jtn-scene .jtn2-check-face { fill:#622573!important; stroke:#A7468A!important; }
-body #jtn-scene .jtn2-check-shade { fill:#622573!important; }
 body :is(.jtn2-arrow,.j77-nav-prev,.j77-nav-next,.slick-arrow,.jvw__arrows button,.model__link):is(:hover,:focus-visible) :is(svg,img) { filter:brightness(0) invert(1)!important; }
 
 body .callback-form__btn::before,body .callback-form__btn::after { content:none!important; background:none!important; box-shadow:none!important; }
